@@ -15,11 +15,11 @@ C3= (0,1,0,0,0,0,0,0,0,0)T
 The MNIST training data consisted of dimensions 50,000x28x28 or 5000x784 and the testing data was of dimensions 50000x28x28 or 50000x784 and the testing data
 was of the dimension 10,000x784. The weights were initially assigned to zero. The loss function used was negative log-likelihood.
 
-![alt text][loss.png]
+![alt text](loss.png)
 
 where gradient was given by:
 
-![alt text][gradient_descent.png]
+![alt text](gradient_descent.png)
 
 The gradient descent criterion was used to minimize the log likelihood function and weights were updated accordingly. Best results were achieved when the learning rate was set to 0.01 and the 5000 iterations were done over the data. Lambda of 10 was used for regularization term.
 ## Neural Network ##
