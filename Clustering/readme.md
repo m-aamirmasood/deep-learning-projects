@@ -2,17 +2,17 @@ In this project, algorithms for k-means, hierarchical agglomerative clustering w
 As part of the project, hierarchical agglomerative clustering with single link algorithm was also used for clustering of each dataset. First of all, the distance matrix was calculated. Each point acted as a cluster. The 2 clusters with the minimum distance were put together in a group and distance matrix was re-evaluated. The process was repeated until only one cluster remained. Spectral clustering was also implemented, which makes use of eigen vectors and eigen values. An embedded space of eigen vectors was created and k-means was applied to the reduced space to get k clusters.
 Rand index was used for checking the validation of clusters and PCA was used for displaying plots on console. Figure 1 contains the plot for k-means implementation for dataset cho, figure 2 contains the hierarchical agglomerative clustering with single link implementation of that dataset and figure 3 contains the k-way clustering implementation. Similarly, figure 2 contains the implementations for datasets iyer.
 
-![alt text](PCA plot.png)
+![alt text](PCAplot.png)
 
-![alt text](PCA for hierarchical.png)
+![alt text](PCAforhierarchical.png)
 
-![alt text](PCA for spectral.png)
+![alt text](PCAforspectral.png)
 
-![alt text](PCA for k-means.png)
+![alt text](PCAfork-means.png)
 
-![alt text](PCA for hierarchical_1.png)
+![alt text](PCAforhierarchical_1.png)
 
-![alt text](PCA for spectral_1.png)
+![alt text](PCAforspectral_1.png)
 
 ## RAND Index ##
 
