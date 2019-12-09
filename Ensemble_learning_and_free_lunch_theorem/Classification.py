@@ -1,9 +1,4 @@
-
-# coding: utf-8
-
-# In[146]:
-
-
+# required packages
 from sklearn.cluster import KMeans
 import pickle
 import gzip
@@ -17,10 +12,7 @@ from PIL import Image
 import os
 import numpy as np
 
-
-# In[147]:
-
-
+# loss function
 def getLoss(w,x,y,lam):
     m = x.shape[0]
     y_enc = onehot_enc(y) #one-hot vector notation
@@ -30,25 +22,30 @@ def getLoss(w,x,y,lam):
     grad = (-1 / m) * np.dot(x.T,(y_enc - prob)) + lam*w
     return loss,grad
 
+# get one-hot notation
 def onehot_enc(Y):
     return (np.arange(np.max(Y) + 1) == Y[:, None]).astype(float)
 
+# soft-max function
 def softmax(z):
     z -= np.max(z)
     sm = (np.exp(z).T / np.sum(np.exp(z),axis=1)).T
     return sm
 
-def getProbsAndPreds(someX):
-    probs = softmax(np.dot(someX,w))
+#get probabilities and predictions
+def getProbsAndPreds(X):
+    probs = softmax(np.dot(X,w))
     preds = np.argmax(probs,axis=1)
     return probs,preds
 
-def getAccuracy(someX,someY):
-    prob,prede = getProbsAndPreds(someX)
-    accuracy = sum(prede == someY)/(float(len(someY)))
+# Accuracy function
+def getAccuracy(X,Y):
+    prob,prede = getProbsAndPreds(X)
+    accuracy = sum(prede == Y)/(float(len(Y)))
     accuracy = accuracy*100
     return accuracy
 
+# get confusion matrix
 def compute_confusion_matrix(true, pred):
     prob,prede = getProbsAndPreds(pred)
     K = len(np.unique(true)) # Number of classes 
@@ -58,10 +55,7 @@ def compute_confusion_matrix(true, pred):
     return result
 
 
-# In[148]:
-
-
-filename = 'mnist.pkl.gz'
+filename = 'mnist.pkl.gz'    # load MNIST dataset 
 f = gzip.open(filename, 'rb')
 training_data, validation_data, test_data = pickle.load(f, encoding='latin1')
 train_x, train_y = training_data
@@ -79,9 +73,6 @@ TestTarget=np.array(test_y)
 print(TestTarget.shape)
 TestData=np.array(test_x)
 print(TestData.shape)
-
-
-# In[149]:
 
 
 USPSMat  = []
@@ -106,10 +97,6 @@ USPSMat= np.asarray(USPSMat)
 print(USPSMat.shape)
 print(USPSTar.shape)
 
-
-# In[150]:
-
-
 ErmsArr = []
 AccuracyArr = []
 num_classes = 10
@@ -133,10 +120,8 @@ cm2= compute_confusion_matrix(USPSTar, USPSMat)
 print(cm2)
 
 
-# In[152]:
-
-
 # Neural Network
+
 import keras
 from keras.datasets import mnist
 from keras.layers import Dense
@@ -170,10 +155,8 @@ cm4= compute_confusion_matrix(USPSTar, USPSMat)
 print(cm4)
 
 
-# In[ ]:
-
-
 # SVM & RandomForest
+
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
@@ -197,7 +180,9 @@ classifier1.fit(USPSMat, USPSTar)
 classifier1.score(USPSMat, USPSTar)
 cm6= compute_confusion_matrix(USPSTar, USPSMat)
 print(cm6)
+
 #RandomForestClassifier
+
 classifier2 = RandomForestClassifier(n_estimator=10);
 classifier2.fit(X_train, y_train) 
 classifier2.score(X_train,y_train)
@@ -208,9 +193,7 @@ classifier2.score(USPSMat, USPSTar)
 cm8= compute_confusion_matrix(USPSTar, USPSMat)
 print(cm8)
 
-
-# In[ ]:
-
+# Ensemble Learning
 
 from sklearn import model_selection
 from sklearn.linear_model import LogisticRegression
@@ -227,4 +210,3 @@ results = model_selection.cross_val_score(ensemble, TrainingData, TrainingTarget
 print(results.mean())
 results = model_selection.cross_val_score(ensemble, USPSMat, USPSTar, cv=kfold)
 print(results.mean())
-
