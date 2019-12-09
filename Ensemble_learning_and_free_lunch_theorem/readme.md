@@ -33,7 +33,7 @@ Support vector machine was also implemented using the packages defined in sklear
 ## Ensemble Classifier ##
 The predictions of all the classifiers were then combined to create an ensemble classifier and majority voting was used to determine the label of the image.
 ## No Free Lunch Theorem ##
-Hume pointed out that ‘even after the observation of the frequent or constant conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience’. No free lunch theorem states that if an algorithm does well on one problem then it necessarily pays for that in other problems. When the above-mentioned classifiers were trained on MNIST dataset, they performed well on MNIST testing data but did not fare too well on USPS dataset. This is shown in Table 1:
+Hume pointed out that ‘even after the observation of the frequent or constant conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience’. No free lunch theorem states that if an algorithm does well on one problem then it necessarily pays for that in other problems. When the above-mentioned classifiers were trained on MNIST dataset, they performed well on MNIST testing data but did not fare too well on USPS dataset. This is shown in Table below:
 
 | classifier          | MNIST | USPS |
 |---------------------|:-------:|------:|
