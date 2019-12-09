@@ -18,7 +18,7 @@ In boosting, the weights were initially assigned uniformly. A bootstrap sample b
 In 10-fold cross validation, data was divided into 10 disjoint subsets. The data was trained on 9 partitions whereas the last partition was used for testing purposes.
 
 ## Performance Measures ##
-Accuracy, precision, recall, and F-1 measures were used for calculating the performance of
+Accuracy, precision, recall, and F-1 measures were used for calculating the performance of algorithms.
 
 ## Results ##
 The performance was measure for all the algorithms and results have been tabulated below:
