@@ -65,4 +65,4 @@ The hyperparameters of the model were changed for both solutions and the value o
 | 200      | 0.529         | 0.530           | 0.608         |
 
 ### Results ###
-Different combinations for the hyperparameters were tried and the best possible root mean square measure was achieved when the clusters were increased to 50 and for closed-form solution. For gradient descent method, rms could be further decreased if the cluster of 100 and learning rate of 0.05 was chosen. The root mean square error value did not change much when other hyperparameters were changed.
+Different combinations for the hyperparameters were tried and the best possible root mean square measure was achieved when the clusters were increased to 50 and for closed-form solution. For gradient descent method, rms could be further decreased if the cluster of 100 and learning rate of 0.05 was chosen. The root mean square error value did not change much when other hyperparameters were changed
