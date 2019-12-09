@@ -6,6 +6,8 @@ The splits with the lowest entropy were found. So, the information gain for a gi
 computed by taking the entropy of the whole set and subtracting it with the entropies of sets that
 are obtained by breaking the whole set into one piece per attribute category.
 
+![alt text](entropy.png)
+
 The goal of decision tree was to find those descriptive features which contain the most "information" regarding the target feature and then split the dataset along the values of these features such that the target feature values for the resulting subsets were as pure as possible based on the measure of entropy. The descriptive feature which left the target feature most purely was the most informative one. This process was done until a stopping criterion was met which was the max_depth of the tree. The leaf nodes contained the rules for traversing the tree.
 
 ## Random Forest ##
@@ -19,6 +21,8 @@ In 10-fold cross validation, data was divided into 10 disjoint subsets. The data
 
 ## Performance Measures ##
 Accuracy, precision, recall, and F-1 measures were used for calculating the performance of algorithms.
+
+![alt text](metrics.png)
 
 ## Results ##
 The performance was measure for all the algorithms and results have been tabulated below:
